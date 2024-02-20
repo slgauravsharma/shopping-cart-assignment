@@ -1,0 +1,42 @@
+  {{> header }}
+  <main>
+    <div class="products-container">
+         <ul class="category-list-container">
+            {{#each categoryList as |item index|}}
+              {{#if item.enabled}}
+                <li data-item-id="{{index}}"
+                  >
+                    {{item.name}}
+                </li>
+                {{/if}}
+            {{/each}}
+        </ul>
+         <ul class="products-list-container">
+            {{#each productList as |item index|}}
+                <li class="border-gradient" data-item-id="{{index}}"
+                  >
+                  <div class="product-name"> {{item.name}}</div>
+                  <div class="product-img-des">
+                    <div class="product-image"><img src="{{[../../utils/hbsHelper/getImagePath] item.imageURL}}" alt="product"/></div>
+                    <div class="product-description">
+                    <p  title="{{item.description}}">{{item.description}} </p>
+                     <div class="product-actions-mobile">
+                      <div class="product-price">MRP Rs.{{item.price}}</div>
+                      <button class="product-buynow">Buy Now
+                        <span class="product-price-inner">@ Rs.{{item.price}}</span>
+                      </button>
+                  </div>
+                    </div>
+                  </div>
+                  <div class="product-actions-non-mobile">
+                    <div class="product-price">MRP Rs.{{item.price}}</div>
+                    <button class="product-buynow">Buy Now
+                      <span class="product-price-inner">@ Rs.{{item.price}}</span>
+                    </button>
+                  </div>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+  </main>
+  {{> footer }}

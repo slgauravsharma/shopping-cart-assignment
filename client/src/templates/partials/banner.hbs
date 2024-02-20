@@ -1,0 +1,15 @@
+<div class="home-banner">
+  <button class="home-banner-prev">PREV</button>
+  <img
+    src="{{selectedBanner}}"
+    alt="application banner"
+    class="home-banner-img"
+    id="home-banner-img"
+  />
+  <ul id="banner-list-container">
+    {{#each bannerList as |item index|}}
+      <li data-item-id="{{index}}" class="banner-bullet-point {{[../../utils/hbsHelper/getClassByKey] index key="selectedIndex" class="higlight-banner-point"}}">&nbsp;</li>
+    {{/each}}
+  </ul>
+  <button class="home-banner-next">NEXT</button>
+</div>

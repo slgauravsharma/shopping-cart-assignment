@@ -1,0 +1,12 @@
+// @mixin higlight-banner-point($n, $max) {
+//   %mod-#{$n} {
+//     @content;
+//   }
+//   $i: $n;
+//   @while $i <= $max {
+//     .higlight-banner-point-#{$i} {
+//       @extend %mod-#{$n};
+//     }
+//     $i: $i + $n;
+//   }
+// }

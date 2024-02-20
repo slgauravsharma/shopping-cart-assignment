@@ -1,0 +1,22 @@
+<div class="home-category">
+  <ul id="category-list-container">
+    {{#each categoryList as |item index|}}
+      {{#if item.enabled}}
+        <li data-item-id="{{index}}"
+          >
+          <div class="category-image">
+            <img
+                  src="{{[../../utils/hbsHelper/getImagePath] item.imageUrl}}"
+                  alt="category"
+            />
+          </div>
+          <div class="category-detail">
+            <h1>{{item.name}}</h1>
+            <p>{{item.description}}</p>
+            <button>{{item.key}}</button>
+          </div>    
+          </li>
+        {{/if}}
+    {{/each}}
+  </ul>
+</div>
