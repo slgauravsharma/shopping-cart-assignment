@@ -1,10 +1,10 @@
   {{> header }}
   <main>
     <div class="products-container">
-         <ul class="category-list-container">
+         <ul  id="category-list-container" class="category-list-container">
             {{#each categoryList as |item index|}}
               {{#if item.enabled}}
-                <li data-item-id="{{index}}"
+                <li data-item-id="{{index}}" class="category-item"
                   >
                     {{item.name}}
                 </li>
@@ -12,8 +12,11 @@
             {{/each}}
         </ul>
          <ul class="products-list-container">
-            {{#each productList as |item index|}}
-                <li class="border-gradient" data-item-id="{{index}}"
+            {{#each filteredProductList as |item index|}}
+                <li 
+                data-item-id="{{item.id}}" class="border-gradient product-item 
+                {{!-- {{[../../utils/hbsHelper/getClassByKey] index key="selectedIndex" class="higlight-banner-point"}} --}}
+                "       
                   >
                   <div class="product-name"> {{item.name}}</div>
                   <div class="product-img-des">
